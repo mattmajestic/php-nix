@@ -1,0 +1,11 @@
+services:
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.nix
+    ports:
+      - "8080:80"
+    volumes:
+      - ./index.html:/var/www/html/index.html
+      - ./configuration.nix:/etc/nix/configuration.nix
+    container_name: php-container
